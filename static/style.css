@@ -1,0 +1,56 @@
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+#pageContent {
+    background: url('./media/hr-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    /* backdrop-filter: ; */
+}
+
+
+/* input {
+    height: 40px;
+    outline: none;
+    padding: 10px;
+    margin: 12px;
+    width: 100px;
+} */
+
+.inlineLogo {
+    position: absolute;
+    line-height: 64px;
+}
+
+.text-accent {
+    color: #ea3f2d
+}
+
+.bg-accent {
+    background-color: #ea3f2d
+}
+
+#submitBtn {
+    margin-top: 64px;
+    margin-bottom: 32px;
+    border-top: 1px dashed #eaeaea;
+}
+
+.maxWidth320 {
+    max-width: 320px;
+    margin: 0 auto;
+}

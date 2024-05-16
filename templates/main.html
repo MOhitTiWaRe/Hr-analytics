@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>HR Analytics</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div id="pageContent">
+        <div class="d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="bg-white rounded shadow-lg">
+                        <h1 class="text-center h5 pt-5 pb-3"><strong>HR Analytics</strong></h1>
+                        <p class="text-center text-black-50">We can predict whether an employee will continue working with company or will leave based on satisfaction and other factors.</p>
+                        <form class="py-2" action="{{ url_for('main') }}" method="POST">
+                            <div class="row g-3 m-2">
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <input type="number" name="input1" class="form-control" id="input1" required min="0" max="100" />
+                                        <label for="input1">Satisfaction level (Rate: 0-100)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <input type="number" name="input2" class="form-control" id="input2" required>
+                                        <label for="input2">Avg Monthly Hrs. Spend</label>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <input type="number" name="input3" class="form-control" id="input3" required />
+                                        <label for="input3">Time Spend in yrs.</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-3 m-2">
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <select class="form-select " name="input4" id="input4">
+                                            <option value="0">False</option>
+                                            <option value="1">True</option>
+                                        </select>
+                                        <label for="input4">Work Accident</label>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <select class="form-select" name="input5" id="input5">
+                                            <option value="0">False</option>
+                                            <option value="1">True</option>
+                                        </select>
+                                        <label for="input5">Promotion in last 5 yrs.</label>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="input6" name="input6">
+                                            <option value="1">Low (Below 7 LPA)</option>
+                                            <option value="2">Mid (7 LPA to 15 LPA)</option>
+                                            <option value="3">High (15 LPA or more)</option>
+                                        </select>
+                                        <label for="input6">Salary</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="submitBtn" class="text-center">
+                                <button class="btn btn-primary w-50 btn-lg shadow-lg rounded-pill">Predict</button>
+                            </div>
+                        </form>
+                        <div class="text-center m-5"><strong>{{ pred }}</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
